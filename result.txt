@@ -1,0 +1,442 @@
+test.t parse result:
+Type -> INT
+Type -> INT
+Formal -> Type ID
+Type -> INT
+Formal -> Type ID
+OtherFormals -> 
+OtherFormals -> COMMA Formal OtherFormals
+Formals -> Formal OtherFormals
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+oexp -> ‘-’ MultiplicativeExpr oexp ‘;’ 
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+Statement -> AssignStmt 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+ReturnStmt -> RETURN Expression ‘;’ 
+Statement -> ReturnStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type ID LP Formals RP Block
+Type -> INT
+Formals -> 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+oActualparams -> 
+oActualparams -> ‘,’ Expression oActualparams 
+ActualParams -> Expression oActualparams 
+PrimaryExpr -> Id ‘(’ ActualParams ‘)’
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+oActualparams -> 
+oActualparams -> ‘,’ Expression oActualparams 
+ActualParams -> Expression oActualparams 
+PrimaryExpr -> Id ‘(’ ActualParams ‘)’
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+oexp -> ‘+’ MultiplicativeExpr oexp ‘;’ 
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+Statement -> AssignStmt 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type MAIN ID LP Formals RP Block
+MethodDecls -> MethodDecl
+MethodDecls -> MethodDecl MethodDecls
+Program -> MethodDecls
+Parsed OK!
+======================================================================
+test1.t parse result:
+Type -> INT
+Formals -> 
+Type -> REAL
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type MAIN ID LP Formals RP Block
+MethodDecls -> MethodDecl
+Program -> MethodDecls
+Parsed OK!
+======================================================================
+test2.t parse result:
+Type -> INT
+Formals -> 
+Type -> REAL
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> REAL
+PrimaryExpr -> Real numbers
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+LocalVarDecl -> Type AssignStmt 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type MAIN ID LP Formals RP Block
+MethodDecls -> MethodDecl
+Program -> MethodDecls
+Parsed OK!
+======================================================================
+test3.t parse result:
+Type -> INT
+Formals -> 
+Type -> REAL
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> REAL
+PrimaryExpr -> Integer numbers
+PrimaryExpr -> Real numbers
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+LocalVarDecl -> Type AssignStmt 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+PrimaryExpr -> Real numbers
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type MAIN ID LP Formals RP Block
+MethodDecls -> MethodDecl
+Program -> MethodDecls
+Parsed OK!
+======================================================================
+test4.t parse result:
+Type -> INT
+Formals -> 
+Type -> REAL
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> REAL
+PrimaryExpr -> Integer numbers
+PrimaryExpr -> Real numbers
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+LocalVarDecl -> Type AssignStmt 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+PrimaryExpr -> Real numbers
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type MAIN ID LP Formals RP Block
+MethodDecls -> MethodDecl
+Program -> MethodDecls
+Parsed OK!
+======================================================================
+test2.t parse result:
+Type -> INT
+Type -> INT
+Formal -> Type ID
+Type -> INT
+Formal -> Type ID
+OtherFormals -> 
+OtherFormals -> COMMA Formal OtherFormals
+Formals -> Formal OtherFormals
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+oexp -> ‘-’ MultiplicativeExpr oexp ‘;’ 
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+Statement -> AssignStmt 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+ReturnStmt -> RETURN Expression ‘;’ 
+Statement -> ReturnStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type ID LP Formals RP Block
+Type -> INT
+Formals -> 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+oActualparams -> 
+oActualparams -> ‘,’ Expression oActualparams 
+ActualParams -> Expression oActualparams 
+PrimaryExpr -> Id ‘(’ ActualParams ‘)’
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+oActualparams -> 
+oActualparams -> ‘,’ Expression oActualparams 
+ActualParams -> Expression oActualparams 
+PrimaryExpr -> Id ‘(’ ActualParams ‘)’
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+oexp -> ‘+’ MultiplicativeExpr oexp ‘;’ 
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+Statement -> AssignStmt 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+WriteStmt -> WRITE ‘(‘ Expression ‘,’ QString ‘)’ ‘;’ 
+Statement -> WriteStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type MAIN ID LP Formals RP Block
+MethodDecls -> MethodDecl
+MethodDecls -> MethodDecl MethodDecls
+Program -> MethodDecls
+Parsed OK!
+======================================================================
+test7.t parse result:
+Type -> INT
+Type -> INT
+Formal -> Type ID
+Type -> INT
+Formal -> Type ID
+OtherFormals -> 
+OtherFormals -> COMMA Formal OtherFormals
+Formals -> Formal OtherFormals
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+PrimaryExpr -> Id
+PrimaryExpr -> Id
+oMultiexp -> 
+oMultiexp -> ‘*’ PrimaryExpr oMultiexp
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+oexp -> ‘-’ MultiplicativeExpr oexp ‘;’ 
+xpression -> MultiplicativeExpr oexp 
+AssignStmt -> Id := Expression ‘;’ 
+Statement -> AssignStmt 
+PrimaryExpr -> Id
+oMultiexp -> 
+MultiplicativeExpr -> PrimaryExpr oMultiexp 
+oexp ->  
+xpression -> MultiplicativeExpr oexp 
+ReturnStmt -> RETURN Expression ‘;’ 
+Statement -> ReturnStmt 
+OtherStatements -> 
+OtherStatements ->Statement OtherStatements 
+OtherStatements ->Statement OtherStatements 
+Statements ->Statement OtherStatements 
+Block -> BEGIN Statements End 
+MethodDecl -> Type ID LP Formals RP Block
+Type -> INT
+Formals -> 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+ReadStmt -> READ ‘(‘ Id ‘,’ QString ‘)’ ‘;’ 
+Statement -> ReadStmt 
+Type -> INT
+LocalVarDecl -> Type Id ‘;‘ 
+Statement -> LocalVarDecl 
+syntax error
+======================================================================
